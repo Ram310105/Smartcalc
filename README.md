@@ -145,17 +145,4 @@ B.Tech AI & Computer Science Engineering
 
 ## 📸 Screenshots
 
-### 🏠 Main Interface
-![Main UI](https://ibb.co/LdQkcgb7)
-
-### 🌙 Dark Mode
-![Dark Mode](https://ibb.co/fYx7gkvZ)
-
-### 🔬 Scientific Mode
-![Scientific Mode](https://ibb.co/zW6wfg3B)
-
-### 💻 Programmer Mode
-![Programmer Mode](https://ibb.co/KpHqFnJr)
-
-### 📜 History Panel
-![History](https://ibb.co/wZtfbj4N)
+Screenshots were presented in the assets folder
