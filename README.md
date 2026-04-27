@@ -51,38 +51,7 @@ It provides real-time evaluation, keyboard support, and a clean UI with animatio
 ---
 
 ## 📂 Project Structure
-SmartCalc/
-│
-├── index.html
-├── app.js
-│
-├── scripts/
-│ ├── core/
-│ │ ├── calculator.js
-│ │ ├── parser.js
-│ │ └── history.js
-│ │
-│ ├── modes/
-│ │ ├── basic.js
-│ │ ├── scientific.js
-│ │ └── programmer.js
-│ │
-│ ├── ui/
-│ │ ├── buttons.js
-│ │ ├── display.js
-│ │ └── theme.js
-│ │
-│ └── utils/
-│ ├── helpers.js
-│ └── constants.js
-│
-├── styles/
-│ ├── base.css
-│ ├── layout.css
-│ ├── components.css
-│ └── animations.css
-│
-└── config.js
+![Project Structure](https://i.ibb.co/GQzgmysj/Chat-GPT-Image-Apr-27-2026-11-23-48-PM.png)
 
 ---
 
@@ -145,4 +114,18 @@ B.Tech AI & Computer Science Engineering
 
 ## 📸 Screenshots
 
-Screenshots were presented in the assets folder
+
+### 🏠 Main Interface
+![Main UI](https://i.ibb.co/fd81yNBw/Screenshot-2026-04-27-224502.png)
+
+### 🌙 Dark Mode
+![Dark Mode](https://i.ibb.co/qMrwSN5h/Screenshot-2026-04-27-224634.png)
+
+### 🔬 Scientific Mode
+![Scientific Mode](https://i.ibb.co/N2qRbmxy/scientific-Mode.png)
+
+### 💻 Programmer Mode
+![Programmer Mode](https://i.ibb.co/VYDTVCzF/Programming-Mode.png)
+
+### 📜 History Panel
+![History](https://i.ibb.co/hx0SnwVR/Screenshot-2026-04-27-224613.png)
