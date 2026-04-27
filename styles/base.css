@@ -1,0 +1,104 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* ===== ROOT VARIABLES ===== */
+:root {
+  --bg-dark: #0f172a;
+  --bg-light: #f1f5f9;
+
+  --text-dark: #0f172a;
+  --text-light: #f8fafc;
+
+  --primary: #38bdf8;
+  --danger: #ef4444;
+  --success: #22c55e;
+}
+
+
+/* ===== BODY ===== */
+body {
+  font-family: "Poppins", system-ui, -apple-system, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-light);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  scroll-behavior: smooth;
+}
+
+
+/* ===== LIGHT MODE ===== */
+body.light {
+  background: var(--bg-light);
+  color: var(--text-dark);
+}
+
+
+/* ================================================= */
+/* 🔥 GLOBAL OFF STATE CONTROL (IMPORTANT) */
+/* ================================================= */
+
+/* Disable typing cursor completely when OFF */
+.off input {
+  caret-color: transparent;
+}
+
+/* Prevent text selection when OFF */
+.off {
+  user-select: none;
+}
+
+
+/* ================================================= */
+/* INPUT */
+/* ================================================= */
+input {
+  outline: none;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 1rem;
+}
+
+
+/* ================================================= */
+/* BUTTON */
+/* ================================================= */
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+
+/* ================================================= */
+/* LIST */
+/* ================================================= */
+ul {
+  list-style: none;
+}
+
+
+/* ================================================= */
+/* LINKS */
+/* ================================================= */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* ================================================= */
+/* SELECTION */
+/* ================================================= */
+::selection {
+  background: var(--primary);
+  color: #000;
+}

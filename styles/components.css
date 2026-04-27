@@ -1,0 +1,212 @@
+/* ===== DISPLAY ===== */
+.display {
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.05);
+  transition: background 0.3s ease;
+}
+
+.display input {
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  text-align: right;
+  background: transparent;
+  border: none;
+  color: inherit;
+}
+
+/* ===== HINT ===== */
+.hint {
+  display: block;
+  font-size: 11px;
+  opacity: 0.6;
+  margin-top: 4px;
+  text-align: right;
+}
+
+
+/* ================================================= */
+/* 🔴 FULL DISPLAY OFF (ONLY SCREEN SHOULD CHANGE) */
+/* ================================================= */
+.off .display {
+  background: #000 !important;
+}
+
+/* hide everything inside display */
+.off .display * {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* hide placeholder */
+.off .display input::placeholder {
+  color: transparent;
+}
+
+
+/* ================================================= */
+/* RESULT AREA */
+/* ================================================= */
+#result {
+  margin-top: 6px;
+  font-size: 16px;
+  text-align: right;
+  color: var(--primary);
+  opacity: 0.9;
+  min-height: 22px;
+}
+
+
+/* ================================================= */
+/* 🔥 POWER BUTTON */
+/* ================================================= */
+.power-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 6px;
+}
+
+.power-btn {
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+
+/* ================================================= */
+/* 🔥 DISABLE INTERACTION ONLY (NO FADE) */
+/* ================================================= */
+.off .calculator,
+.off .modes,
+.off .buttons,
+.off input {
+  pointer-events: none;
+}
+
+/* keep UI normal (no dimming) */
+.off .calculator,
+.off .modes,
+.off .buttons {
+  opacity: 1;
+  filter: none;
+}
+
+/* keep power button clickable */
+.power-btn {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+
+/* ================================================= */
+/* BUTTON GRID */
+/* ================================================= */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 15px;
+}
+
+
+/* ===== BUTTON BASE ===== */
+button {
+  padding: 16px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255,255,255,0.08);
+  color: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
+/* ===== HOVER ===== */
+button:hover {
+  background: rgba(255,255,255,0.18);
+}
+
+
+/* ===== ACTIVE ===== */
+button:active {
+  transform: scale(0.92);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+
+/* ===== OPERATORS ===== */
+button.operator {
+  background: rgba(56,189,248,0.2);
+}
+
+
+/* ===== SPECIAL OPS */
+button[data-value="//"],
+button[data-value="%"] {
+  background: rgba(234,179,8,0.25);
+  font-weight: bold;
+}
+
+
+/* ===== EQUALS ===== */
+button.equals {
+  background: var(--success);
+  color: #000;
+  font-weight: bold;
+}
+
+
+/* ===== CLEAR ===== */
+button.clear {
+  background: var(--danger);
+  color: #fff;
+}
+
+
+/* ===== MODES ===== */
+.modes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.modes button {
+  flex: 1;
+  margin: 0 3px;
+  padding: 8px;
+  font-size: 14px;
+}
+
+
+/* ===== ACTIVE MODE ===== */
+.modes button.active {
+  background: var(--primary);
+  color: #000;
+  font-weight: bold;
+}
+
+
+/* ===== LIGHT MODE ===== */
+body.light .display {
+  background: rgba(0,0,0,0.05);
+}
+
+body.light button {
+  background: rgba(0,0,0,0.08);
+  color: #000;
+}
+
+body.light button:hover {
+  background: rgba(0,0,0,0.15);
+}
+
+body.light button[data-value="//"],
+body.light button[data-value="%"] {
+  background: rgba(234,179,8,0.4);
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartCalc</title>
+
+  <meta name="description" content="SmartCalc - Advanced multi-mode calculator with scientific and programmer features.">
+
+<link rel="icon" href="https://i.ibb.co/wh5XbXD7/smartcalc.png" type="image/png">
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/animations.css">
+
+  <style>
+  /* ===== INFO CARD ===== */
+  .info-card {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 240px;
+
+    padding: 14px;
+    border-radius: 16px;
+
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(12px);
+
+    color: #fff;
+    font-size: 12px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    z-index: 1000;
+
+    animation: slideIn 0.6s ease;
+  }
+
+  .info-card h3 {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #38bdf8;
+  }
+
+  .info-section {
+    margin-bottom: 8px;
+  }
+
+  .info-section b {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+
+  .info-section p {
+    font-size: 11px;
+    opacity: 0.8;
+    line-height: 1.4;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(-30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  body.light .info-card {
+    background: rgba(255,255,255,0.9);
+    color: #000;
+  }
+
+  /* optional mobile hide */
+  @media (max-width: 600px) {
+    .info-card {
+      display: none;
+    }
+  }
+  .logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* LOGO IMAGE */
+.logo-section img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+/* HEADER TITLE */
+.logo-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- 🔥 FIXED INFO CARD -->
+  <div class="info-card">
+
+    <h3>📘 SmartCalc Guide</h3>
+
+    <div class="info-section">
+      <b>🧠 Usage</b>
+      <p>Turn ON → Enter values → Press Enter</p>
+    </div>
+
+    <div class="info-section">
+      <b>⚡ Shortcuts</b>
+      <p>Enter = Result<br>Esc = Close History</p>
+    </div>
+
+    <div class="info-section">
+      <b>🔢 Ops</b>
+      <p>// = Floor<br>% = Remainder</p>
+    </div>
+
+    <div class="info-section">
+      <b>📐 Conversions</b>
+      <p>1 km = 1000 m<br>1 kg = 1000 g</p>
+    </div>
+
+    <div class="info-section">
+      <b>💡 Tip</b>
+      <p>Use () for accurate results</p>
+    </div>
+
+  </div>
+
+
+  <div id="app">
+
+    <!-- HEADER -->
+    <header class="header">
+
+  <div class="logo-section">
+    <img src="https://i.ibb.co/wh5XbXD7/smartcalc.png" alt="SmartCalc Logo" />
+    <h2>SmartCalc</h2>
+  </div>
+
+  <div class="header-actions">
+    <button id="historyToggle">📜</button>
+    <button id="themeToggle">🌙</button>
+  </div>
+
+</header>
+
+    <!-- CALCULATOR -->
+    <main class="calculator">
+
+      <!-- DISPLAY -->
+      <div class="display">
+        <input 
+          id="input" 
+          placeholder="Enter expression"
+          autocomplete="off"
+          inputmode="decimal"
+        />
+        <div id="result"></div>
+      </div>
+
+      <!-- POWER BUTTON -->
+      <div class="power-row">
+        <button id="powerBtn" class="power-btn">⏻</button>
+      </div>
+
+      <!-- MODES -->
+      <div class="modes">
+        <button class="mode-btn active" data-mode="basic">Basic</button>
+        <button class="mode-btn" data-mode="scientific">Scientific</button>
+        <button class="mode-btn" data-mode="programmer">Programmer</button>
+      </div>
+
+      <!-- BUTTON GRID -->
+      <div class="buttons" id="buttons"></div>
+
+    </main>
+
+    <!-- HISTORY -->
+    <aside class="history-panel hidden" id="historyPanel">
+      <div class="history-header">
+        <h3>History</h3>
+        <button id="clearHistory">Clear</button>
+      </div>
+
+      <ul id="historyList"></ul>
+    </aside>
+
+  </div>
+
+  <!-- Math.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/14.8.1/math.min.js"></script>
+
+  <!-- App -->
+  <script type="module" src="app.js"></script>
+
+</body>
+</html>

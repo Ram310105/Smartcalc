@@ -1,0 +1,142 @@
+/* ===== FADE IN ===== */
+.fade {
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ===== BUTTON INTERACTIONS ===== */
+button {
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.03);
+}
+
+button:active {
+  transform: scale(0.92);
+}
+
+
+/* ===== MODE SWITCH ===== */
+.modes button.active {
+  animation: pop 0.2s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+
+/* ===== HISTORY PANEL ===== */
+.history-panel {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.history-panel.hidden {
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+/* ===== RESULT PULSE ===== */
+.result-animate {
+  animation: pulse 0.2s ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+
+/* ================================================= */
+/* 🔥 DISPLAY = REAL SCREEN */
+/* ================================================= */
+
+/* 🔴 FULL SCREEN OFF */
+.off .display {
+  background: #000 !important;
+  transition: background 0.3s ease;
+}
+
+/* hide ALL content inside display */
+.off .display * {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* remove placeholder text */
+.off .display input::placeholder {
+  color: transparent;
+}
+
+
+/* ================================================= */
+/* 🔥 TV TURN-ON EFFECT */
+/* ================================================= */
+
+.tv-on {
+  animation: tvOn 0.4s ease forwards;
+}
+
+@keyframes tvOn {
+  0% {
+    transform: scaleY(0.05);
+    background: #fff;
+  }
+  40% {
+    transform: scaleY(1.2);
+    background: #fff;
+  }
+  100% {
+    transform: scaleY(1);
+    background: transparent;
+  }
+}
+
+
+/* ================================================= */
+/* 🎬 CINEMATIC TEXT */
+/* ================================================= */
+
+.cinematic {
+  opacity: 0;
+  letter-spacing: 6px;
+  color: #38bdf8;
+
+  animation: cinematicText 1s ease forwards;
+}
+
+@keyframes cinematicText {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+    letter-spacing: 8px;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 1px;
+  }
+}
+
+
+/* ===== OFF STATE WRAPPER ===== */
+.off {
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
